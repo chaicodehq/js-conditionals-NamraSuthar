@@ -32,13 +32,13 @@ export function checkPasswordStrength(password) {
   var criteria = 0;
 
   if (password.length >= 8) criteria++;
-  if (/[A-Z]/.test(password)) score++;
-  if (/[a-z]/.test(password)) score++;
-  if (/[0-9]/.test(password)) score++;
-  if (/[!@#$%^&*()_+\-=\[\]{}|;:,.<>?]/.test(password)) score++;
+  if (/[A-Z]/.test(password)) criteria++;
+  if (/[a-z]/.test(password)) criteria++;
+  if (/[0-9]/.test(password)) criteria++;
+  if (/[!@#$%^&*()_+\-=\[\]{}|;:,.<>?]/.test(password)) criteria++;
 
-  if (score <= 1) return "weak";
-  else if (score <= 3) return "medium";
-  else if (score === 4) return "strong";
+  if (criteria <= 1) return "weak";
+  else if (criteria <= 3) return "medium";
+  else if (criteria === 4) return "strong";
   else return "very strong";
 }
